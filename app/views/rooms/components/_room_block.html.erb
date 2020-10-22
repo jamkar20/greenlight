@@ -46,7 +46,7 @@
         </td>
         <td>
           <div>
-            <h4 contenteditable="false" class="m-0 force-text-normal room-name-text" ><%= room.name %></h4>
+            <h4 contenteditable="false" class="m-0 force-text-normal room-name-text text-right" ><%= room.name %></h4>
           </div>
           <div style="display: none">
             <input class="form-control input-sm w-100 h-4 room-name-editable" value="<%= room.name %>">
@@ -59,7 +59,7 @@
             <% end %>
           </div>
         </td>
-        <td>
+        <td class="d-flex flex-row-reverse">
           <span class="stamp stamp-md bg-primary">
             <% if room == current_user.main_room %>
               <i class="fas fa-home"></i>
