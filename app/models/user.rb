@@ -39,8 +39,7 @@ class User < ApplicationRecord
   validates :provider, presence: true
   validate :check_if_email_can_be_blank
   validates :email, length: { maximum: 256 }, allow_blank: true,
-                    uniqueness: { case_sensitive: false, scope: :provider },
-                    format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+                    uniqueness: { case_sensitive: false, scope: :provider }
 
   validates :password, length: { minimum: 6 }, confirmation: true, if: :greenlight_account?, on: :create
 
