@@ -21,8 +21,8 @@
 <% end %>
 <div class="background pb-1">
   <div class="container">
-    <div class="row pt-7 pt-sm-9">
-      <div class="col-lg-8 col-sm-12">
+    <div class="row flex-row-reverse pt-7 pt-sm-9">
+      <div class="col-lg-8 col-sm-12" dir="rtl">
         <div id="room-title" class="display-3 form-inline <%= 'edit_hover_class' if current_user.main_room != @room %>" data-path="<%= update_settings_path(@room) %>">
            <h1 contenteditable=false id="user-text" class="display-3 text-left mb-3 font-weight-400"><%= title(@room.name) %></h1>
           <% if current_user.main_room == @room %>
@@ -31,7 +31,7 @@
             <a><i id="edit-room" class="fa fa-edit align-top home-indicator ml-2" data-edit-room="<%= @room.uid %>"></i></a>
           <% end %>
         </div>
-        <h4 class="text-left mb-6"><%= @room.sessions %> <%= t("room.sessions") %><% unless hide_recording_tables %> | <%= @recordings.length %> <%= t("room.recordings") %><% end %></h4>
+        <h4 class="text-right mb-6"><%= @room.sessions %> <%= t("room.sessions") %><% unless hide_recording_tables %> | <%= @recordings.length %> <%= t("room.recordings") %><% end %></h4>
         <% unless exceeds_limit %>
           <label class="form-label"><%= t("room.invite_participants") %></label>
           <div class="row">
@@ -40,7 +40,7 @@
                 <span class="input-icon-addon">
                   <i class="fas fa-link"></i>
                 </span>
-                <input id="invite-url" type="text" class="form-control w-100" value="<%= request.base_url + @room.invite_path %>" readonly="">
+                <input id="invite-url" type="text" class="form-control w-100 text-right" value="<%= request.base_url + @room.invite_path %>" readonly="">
               </div>
             </div>
             <div class="col-lg-5 col-md-12">
@@ -75,7 +75,7 @@
       </div>
     </div>
 
-    <div id="room_block_container" class="row pt-7 pb-5">
+    <div id="room_block_container" class="row flex-row-reverse  pt-7 pb-5">
       <% if current_user.role.get_permission("can_create_rooms") %>
         <% current_user.ordered_rooms.each do |room| %>
           <div class="col-lg-4 col-md-6 col-sm-12">
