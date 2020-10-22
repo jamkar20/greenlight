@@ -21,7 +21,7 @@ fa_IR:
     attributes:
       user:
         accepted_terms: "شرایط و قوانین"
-        email: ایمیل
+        email: نام کاربری
         name: نام
         password: رمز عبور
         password_confirmation: تایید رمز عبور
@@ -121,7 +121,7 @@ fa_IR:
       delete_fail: حذف کاربر با خطا مواجه شد
       demoted: کاربر با موفقیت تغییر نقش داده شد
       invite: "دعوت نامه با موفقیت به %{email} ارسال شد "
-      invite_email_verification: برای استفاده از این امکان می بایست ایمیل فعال شود. لطفا با مدیر سیستم خود تماس بگیرید.
+      invite_email_verification: برای استفاده از این امکان می بایست حساب کاربری فعال شود. لطفا با مدیر سیستم خود تماس بگیرید.
       merge_fail: خطایی در ادغام حساب های کاربری رخ داده است، لطفا کاربران انتخاب شده را بررسی کنید و دوباره تلاش کنید
       merge_success: حساب های کاربری با موفقیت ادغام شدند
       perm_deleted: کاربر به صورت کامل حذف شد
@@ -280,13 +280,13 @@ fa_IR:
   footer:
     legal: قوانین
     privpolicy: سیاست حریم خصوصی
-    powered_by: "استفاده شده از %{href}."
+    powered_by: "قدرت گرفته از %{href}."
   forgot_password:
     subtitle: فراموشی رمز عبور
     email: ایمیل
     submit: ارسال
   go_back: بازگشت
-  greenlight: گرین لایت
+  greenlight: وبینو
   header:
     all_recordings: تمام جلسات ضبط شده
     dropdown:
