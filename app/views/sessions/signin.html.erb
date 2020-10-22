@@ -17,7 +17,7 @@
   <div class="row pt-7">
     <div class="col col-lg-6 offset-lg-3">
       <div class="card">
-        <div class="card-header background">
+        <div class="card-header background" dir="rtl">
           <h4 class="mt-2"><%= t("login_title") %></h4>
         </div>
         <div class="card-body background">
@@ -39,12 +39,12 @@
             </div>
           <% end %>
           <%= form_for(:session, url: create_session_path) do |f| %>
-            <div class="form-group">
+            <div class="form-group text-right">
               <div class="input-icon">
                 <span class="input-icon-addon">
                   <i class="fas fa-at"></i>
                 </span>
-                <%= f.email_field :email, class: "form-control", placeholder: t("email"), value: "" %>
+                <%= f.text_field :email, class: "form-control text-right", placeholder: t("email"), value: "" %>
               </div>
             </div>
             <div class="form-group">
