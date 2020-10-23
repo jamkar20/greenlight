@@ -39,7 +39,7 @@
     <%= recording[:participants] || "-" %>
   </td>
   <td class="text-right">
-    <div class="dropdown">
+    <div class="dropdown text-right" dir="rtl">
       <% if recording[:metadata][:"gl-listed"] == "true" %>
         <button class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown"><i class="dropdown-icon fas fa-globe px-2"></i> <%= t("recording.visibility.public") %></button>
       <% else %>
