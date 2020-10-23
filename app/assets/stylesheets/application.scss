@@ -51,6 +51,13 @@
   outline: none !important;
 }
 
+*:not(i){
+  font-family: 'IRANYekan-fa','sans serif' !important;
+}
+
+:not(i){
+  font-family: 'IRANYekan-fa','sans serif' !important;
+}
 html, body {
   font-family: "Source Sans Pro" !important;
   position: relative;
