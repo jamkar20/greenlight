@@ -119,7 +119,7 @@ $(document).on('turbolinks:load', function(){
         let option = $("option[value='" + uid + "']")
 
         let listItem = document.createElement("li")
-        listItem.setAttribute('class', 'list-group-item text-left not-saved add-access');
+        listItem.setAttribute('class', 'list-group-item text-right not-saved add-access');
         listItem.setAttribute("data-uid", uid)
 
         let spanItemAvatar = document.createElement("span"),
@@ -269,7 +269,7 @@ function displaySharedUsers(path) {
     var user_list_html = ""
 
     users.forEach(function(user) {
-      user_list_html += "<li class='list-group-item text-left' data-uid='" + user.uid + "'>"
+      user_list_html += "<li class='list-group-item text-right' data-uid='" + user.uid + "'>"
 
       if (user.image) {
         user_list_html += "<img id='user-image' class='avatar float-left mr-2' src='" + user.image + "'></img>"

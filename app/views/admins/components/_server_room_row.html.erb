@@ -34,16 +34,16 @@
       <% end %>
     </div>
   </td>
-  <td class="text-left">
+  <td class="text-right">
     <%= room.owner.name %>
   </td>
-  <td class="text-left">
+  <td class="text-right">
     <%= room.uid %>
   </td>
   <td class="text-center">
     <%= @participants_count[room.bbb_id].presence || "-" %>
   </td>
-  <td class="text-left">
+  <td class="text-right">
     <% if running %>
       <%= t("administrator.rooms.table.running") %>
     <% else %>

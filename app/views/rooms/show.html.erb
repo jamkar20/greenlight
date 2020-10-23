@@ -24,7 +24,7 @@
     <div class="row flex-row-reverse pt-7 pt-sm-9">
       <div class="col-lg-8 col-sm-12" dir="rtl">
         <div id="room-title" class="display-3 form-inline <%= 'edit_hover_class' if current_user.main_room != @room %>" data-path="<%= update_settings_path(@room) %>">
-           <h1 contenteditable=false id="user-text" class="display-3 text-left mb-3 font-weight-400 text-right"><%= title(@room.name) %></h1>
+           <h1 contenteditable=false id="user-text" class="display-3 text-right mb-3 font-weight-400 text-right"><%= title(@room.name) %></h1>
           <% if current_user.main_room == @room %>
             <a class="disable-click"><i class="fas fa-home align-top home-indicator ml-2"></i></a>
           <% else %>
