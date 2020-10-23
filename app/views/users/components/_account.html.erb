@@ -20,15 +20,22 @@
       <div class="col-sm-6 mb-4">
         <%= f.label :name, t("settings.account.fullname"), class: "form-label" %>
         <div class="input-icon">
-          <%= f.text_field :name, class: "form-control #{form_is_invalid?(@user, :name)}", placeholder: t("settings.account.fullname"), readonly: !@user.role.get_permission("can_manage_users")? %>
+          <%= f.text_field :name, class: "form-control #{form_is_invalid?(@user, :name)}", placeholder: t("settings.account.fullname"), readonly: "" %>
         </div>
       </div>
 
       <div class="col-sm-6 mb-4">
         <%= f.label :email, t("email"), class: "form-label" %>
+      <% if current_user.role.get_permission("can_manage_users") %>
         <div class="input-icon">
-          <%= f.text_field :email, class: "form-control #{form_is_invalid?(@user, :email)}", placeholder: t("email"), readonly: !@user.role.get_permission("can_manage_users")? %>
+        <%= f.text_field :email, class: "form-control #{form_is_invalid?(@user, :email)}", placeholder: t("email") %>
+      </div>
+      <% else %>
+      <div class="input-icon">
+          <%= f.text_field :email, class: "form-control #{form_is_invalid?(@user, :email)}", placeholder: t("email"), readonly: "" %>
         </div>
+      <% end %>
+        
       </div>
     </div>
     
