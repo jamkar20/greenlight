@@ -32,11 +32,11 @@
       </div>
     </div>
     
-    <%= f.label :provider, t("settings.account.provider"), class: "form-label" %>
-    <%= f.text_field :provider, class: "form-control", readonly: "" %>
+    <%= f.label :provider, t("settings.account.provider"), class: "form-label collapse" %>
+    <%= f.text_field :provider, class: "form-control collapse", readonly: "" %>
     <br>
-    <%= f.label :language, t("settings.account.language"), class: "form-label" %>
-    <%= f.select :language, language_options, {}, { class: "form-control custom-select" } %>
+    <%= f.label :language, t("settings.account.language"), class: "form-label collapse" %>
+    <%= f.select :language, language_options, {}, { class: "form-control custom-select collapse" } %>
 
     <%= f.label :roles, t("settings.account.roles"), class: "form-label mt-5" %>
     <% if current_user.role.get_permission("can_manage_users") %>
