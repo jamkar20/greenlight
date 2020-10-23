@@ -42,7 +42,7 @@
                  ↑
                 <% end %>
               </th>
-              <th class="text-right" data-header="provider" data-order="<%= @order_column == "provider" ? @order_direction : "none" %>">
+              <th class="text-right collapse" data-header="provider" data-order="<%= @order_column == "provider" ? @order_direction : "none" %>">
                 <%= t("administrator.users.table.authenticator") %>
                 <% if @order_column == "provider" && @order_direction == "desc" %>
                  ↓
@@ -72,7 +72,7 @@
                       <div class="small text-muted"><%= [t("administrator.users.table.created"), ": ", user.created_at].join %></div>
                     </td>
                     <td class="user-email"><%= user.email && user.email != "" ? user.email : user.username%></td>
-                    <td><%= user.provider %></td>
+                    <td class="collapse"><%= user.provider %></td>
                     <td class="text-center">
                       <%= render "admins/components/admins_role", role: user.role %>
                     </td>
@@ -82,7 +82,7 @@
                           <a href="javascript:void(0)" data-toggle="dropdown" class="icon">
                             <i class="fas fa-ellipsis-v px-4"></i>
                           </a>
-                          <div class="dropdown-menu dropdown-menu">
+                          <div class="dropdown-menu dropdown-menu text-right" dir="rtl">
                             <% if user.deleted? %>
                               <%= button_to admin_undelete_path(user_uid: user.uid), class: "dropdown-item", "data-disable": "" do %>
                                 <i class="dropdown-icon fas fa-recycle"></i> <%= t("administrator.users.settings.undelete") %>
