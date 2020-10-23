@@ -45,7 +45,7 @@
             readonly: !current_user.nil?, 
             autofocus: true
             %>
-        <span class="input-group-append">
+        <span class="input-group-prepend">
           <button id="room-join" type="submit" class="btn btn-primary btn-sm px-7 form-control join-form">
             <%= (!@room_running && @anyone_can_start) ? t("room.start") : t("room.join") %>
           </button>

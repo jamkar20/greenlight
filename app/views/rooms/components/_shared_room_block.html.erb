@@ -17,12 +17,19 @@
   <div class="card-body p-1">
     <table class="table table-hover table-vcenter text-wrap table-no-border">
       <tbody class="no-border-top">
-        <td>
-          <span class="stamp stamp-md bg-primary">
-            <i class="fas fa-share-alt"></i>
-          </span>
-        </td>
-        <td>
+      <td class="text-right">
+          <div class="item-action dropdown" data-display="static">
+            <a href="javascript:void(0)" data-toggle="dropdown" data-display="static" class="icon">
+              <i class="fas fa-ellipsis-v px-4"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-md-left text-right" dir="rtl">
+              <a href="" data-toggle="modal" data-target="#removeAccessModal" class="remove-share-room dropdown-item" data-path="<%= room_remove_shared_access_path(room) %>">
+                <i class="dropdown-icon far fa-trash-alt"></i> <%= t("remove") %>
+              </a>
+            </div>
+          </div>
+        </td>  
+      <td>
           <div id="room-name">
             <h4 contenteditable="false" class="m-0 force-text-normal" ><%= room.name %></h4>
           </div>
@@ -30,17 +37,10 @@
             <%= t("room.shared_by", email: room.owner.name) %>
           </div>
         </td>
-        <td class="text-right">
-          <div class="item-action dropdown" data-display="static">
-            <a href="javascript:void(0)" data-toggle="dropdown" data-display="static" class="icon">
-              <i class="fas fa-ellipsis-v px-4"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right dropdown-menu-md-left">
-              <a href="" data-toggle="modal" data-target="#removeAccessModal" class="remove-share-room dropdown-item" data-path="<%= room_remove_shared_access_path(room) %>">
-                <i class="dropdown-icon far fa-trash-alt"></i> <%= t("remove") %>
-              </a>
-            </div>
-          </div>
+        <td>
+          <span class="stamp stamp-md bg-primary">
+            <i class="fas fa-share-alt"></i>
+          </span>
         </td>
       </tbody>
     </table>
