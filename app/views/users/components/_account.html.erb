@@ -48,8 +48,19 @@
     <%= f.label :provider, t("settings.account.provider"), class: "form-label collapse" %>
     <%= f.text_field :provider, class: "form-control collapse", readonly: "" %>
     <br>
+<<<<<<< HEAD
     <%= f.label :language, t("settings.account.language"), class: "form-label collapse" %>
     <%= f.select :language, language_options, {}, { class: "form-control custom-select collapse" } %>
+=======
+    <%= f.label :language, t("settings.account.language"), class: "form-label" %>
+    <select id="language-dropdown" class="selectpicker show-tick w-50">
+      <% language_options.each do |lang| %>
+        <option value="<%=lang[1]%>" <%= 'selected' if lang[1] == @user.language %>><%= lang[0] %></option>
+      <% end %>
+    </select>
+    <%= f.hidden_field :language, id: "user_language", value: @user.language %>
+
+>>>>>>> 81907d0285716d3867c72c47c0d4547d872d144a
 
     <%= f.label :roles, t("settings.account.roles"), class: "form-label" %>
     <% if current_user.role.get_permission("can_manage_users") %>
