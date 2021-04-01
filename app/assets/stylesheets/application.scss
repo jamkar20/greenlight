@@ -197,8 +197,11 @@ table {
 
 .dropdown-icon{
   margin-left: 0.5rem !important;
-  margin-right: -0.5rem !important;
+  margin-right: -0.25rem !important;
 }
 .filter-option-inner-inner{
   text-align: right;
+}
+.bs-searchbox input{
+  text-align: right !important;
 }

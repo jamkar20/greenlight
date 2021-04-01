@@ -61,7 +61,7 @@
                           <a href="javascript:void(0)" data-toggle="dropdown" class="icon">
                             <i class="fas fa-ellipsis-v px-4"></i>
                           </a>
-                          <div class="dropdown-menu dropdown-menu">
+                          <div class="dropdown-menu text-right">
                             <% if user.deleted? %>
                               <%= button_to admin_undelete_path(user_uid: user.uid), class: "dropdown-item", "data-disable": "" do %>
                                 <i class="dropdown-icon fas fa-recycle"></i> <%= t("administrator.users.settings.undelete") %>

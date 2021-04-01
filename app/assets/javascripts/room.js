@@ -128,15 +128,15 @@ $(document).on('turbolinks:load', function(){
         let spanItemAvatar = document.createElement("span"),
             spanItemName = document.createElement("span"),
             spanItemUser = document.createElement("span");
-        spanItemAvatar.setAttribute('class', 'avatar float-left mr-2');
+        spanItemAvatar.setAttribute('class', 'avatar float-right ml-2');
         spanItemAvatar.innerText = option.text().charAt(0);
         spanItemName.setAttribute('class', 'shared-user');
         spanItemName.innerText = option.text();
-        spanItemUser.setAttribute('class', 'text-muted');
+        spanItemUser.setAttribute('class', 'text-muted mr-2');
         spanItemUser.innerText = option.data('subtext');
-        spanItemName.append(spanItemUser);
+        spanItemName.prepend(spanItemUser);
 
-        listItem.innerHTML = "<span class='text-primary float-right shared-user cursor-pointer' onclick='removeSharedUser(this)'><i class='fas fa-times'></i></span>"
+        listItem.innerHTML = "<span class='text-primary float-left shared-user cursor-pointer' onclick='removeSharedUser(this)'><i class='fas fa-times'></i></span>"
         listItem.prepend(spanItemName);
         listItem.prepend(spanItemAvatar);
 

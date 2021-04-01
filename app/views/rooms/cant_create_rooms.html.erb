@@ -27,7 +27,8 @@
                                 <% end %>
                                 <h2 class="mb-3"><%= current_user.name %></h2>
                                 <%= link_to edit_user_path(current_user), class: "btn btn-outline-primary mt-2" do %>
-                                    <i class="dropdown-icon fas fa-id-card mr-3"></i><%= t("room.no_room.edit_profile") %>
+                                    <%= t("room.no_room.edit_profile") %>
+                                    <i class="dropdown-icon fas fa-id-card mr-3"></i>
                                 <% end %>
                             </div>
                         </div>
@@ -41,11 +42,11 @@
                             <div class="card-body mx-auto col-sm-9 col-12">
                                 <p><%= t("room.no_room.description") %></p>
                                 <%= form_for(:join_room, url: join_room_path) do |f| %>
-                                    <div class="input-icon mb-2">
+                                    <div class="input-icon mb-2" dir="rtl">
+                                        <%= f.text_field :url, class: "form-control", value: "", placeholder: t("room.no_room.placeholder"), required: "" %>
                                         <span class="input-icon-addon">
                                             <i class="fas fa-link"></i>
                                         </span>
-                                        <%= f.text_field :url, class: "form-control", value: "", placeholder: t("room.no_room.placeholder"), required: "" %>
                                     </div>
                                     <div class="mt-4">
                                         <%= f.submit t("room.no_room.go_to"), class:"btn btn-primary btn-block" %>
