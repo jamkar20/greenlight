@@ -17,12 +17,36 @@
   <div class="card-body p-1">
     <table class="table table-hover table-vcenter text-wrap table-no-border">
       <tbody class="no-border-top">
-      <td class="text-right">
+        <td>
+          <span class="stamp stamp-md bg-primary">
+            <% if room == current_user.main_room %>
+              <i class="fas fa-home"></i>
+            <% else %>
+              <i class="fas fa-chalkboard-teacher"></i>
+            <% end %>
+          </span>
+        </td>
+        <td>
+          <div>
+            <h4 contenteditable="false" class="m-0 force-text-normal room-name-text text-break" ><%= room.name %></h4>
+          </div>
+          <div style="display: none">
+            <input class="form-control input-sm w-100 h-4 room-name-editable" value="<%= room.name %>">
+          </div>
+          <div class="small text-muted">
+            <% if room.sessions > 0 %>
+              <i><%= t("room.last_session", session: view_date(room.last_session)).html_safe %></i>
+            <% else %>
+              <i><%= t("room.no_sessions") %></i>
+            <% end %>
+          </div>
+        </td>
+        <td class="text-right">
           <div class="item-action dropdown" data-display="static">
             <a href="#" data-toggle="dropdown" data-display="static" class="icon">
               <i class="fas fa-ellipsis-v px-4"></i>
             </a>
-            <div class="dropdown-menu dropdown-menu-right dropdown-menu-md-left text-right" dir="rtl">
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-md-left">
               <a href="" data-toggle="modal" data-target="#createRoomModal" class="update-room dropdown-item" data-settings-path="<%= room_settings_path(room) %>">
                 <i class="dropdown-icon fas fa-cog"></i> <%= t("room.settings") %>
               </a>
@@ -43,30 +67,6 @@
               <% end %>
             </div>
           </div>
-        </td>
-        <td>
-          <div>
-            <h4 contenteditable="false" class="m-0 force-text-normal room-name-text text-right" ><%= room.name %></h4>
-          </div>
-          <div style="display: none">
-            <input class="form-control input-sm w-100 h-4 room-name-editable" value="<%= room.name %>">
-          </div>
-          <div class="small text-muted">
-            <% if room.sessions > 0 %>
-              <i><%= t("room.last_session", session: recording_date(room.last_session)) %></i>
-            <% else %>
-              <i><%= t("room.no_sessions") %></i>
-            <% end %>
-          </div>
-        </td>
-        <td class="d-flex flex-row-reverse">
-          <span class="stamp stamp-md bg-primary">
-            <% if room == current_user.main_room %>
-              <i class="fas fa-home"></i>
-            <% else %>
-              <i class="fas fa-chalkboard-teacher"></i>
-            <% end %>
-          </span>
         </td>
       </tbody>
     </table>
