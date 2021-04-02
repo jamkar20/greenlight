@@ -15,7 +15,7 @@
 
 <div data-path="<%= update_settings_path(room) %>" data-room-access-code="<%= room.access_code %>" data-room-moderator-access-code="<%= room.moderator_access_code %>" class="card room-block">
   <div class="card-body p-1">
-    <table class="table table-hover table-vcenter text-wrap table-no-border">
+    <table class="table table-hover table-vcenter text-wrap table-no-border" dir="rtl">
       <tbody class="no-border-top">
         <td>
           <span class="stamp stamp-md bg-primary">
@@ -26,7 +26,7 @@
             <% end %>
           </span>
         </td>
-        <td>
+        <td class="text-right pl-0 pr-0">
           <div>
             <h4 contenteditable="false" class="m-0 force-text-normal room-name-text text-break" ><%= room.name %></h4>
           </div>
@@ -35,13 +35,13 @@
           </div>
           <div class="small text-muted">
             <% if room.sessions > 0 %>
-              <i><%= t("room.last_session", session: view_date(room.last_session)).html_safe %></i>
+              <span class="font-sm w-100"><%= t("room.last_session", session: view_date(room.last_session)).html_safe %></span>
             <% else %>
-              <i><%= t("room.no_sessions") %></i>
+              <span class="font-sm w-100"><%= t("room.no_sessions") %></span>
             <% end %>
           </div>
         </td>
-        <td class="text-right">
+        <td class="text-right pr-0">
           <div class="item-action dropdown" data-display="static">
             <a href="#" data-toggle="dropdown" data-display="static" class="icon">
               <i class="fas fa-ellipsis-v px-4"></i>
